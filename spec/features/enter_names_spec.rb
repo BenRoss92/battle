@@ -10,6 +10,6 @@ end
 feature 'Displaying hitpoints' do
   scenario 'Player 1 can see Player 2 hitpoints' do
     sign_in_and_play
-    expect(page).to have_content('45/60 HP')
+    expect(page).to have_content('60/60 HP')
   end
 end
