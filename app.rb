@@ -16,8 +16,13 @@ class Battle < Sinatra::Base
   get '/play' do
     @player1 = session[:player_1_name]
     @player2 = session[:player_2_name]
-
+    @attack = session[:attack]
     erb :play
+  end
+
+  get '/attack' do
+    session[:attack] = true
+    redirect to('/play')
   end
 
   # start the server if ruby file executed directly

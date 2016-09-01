@@ -1,3 +1,8 @@
 <h2 align="right"><%=@player1%> vs. <%=@player2%></h2>
 
 <p><%=@player2%> 45/60 HP</p>
+
+<a href="/attack">Attack</a>
+<% if @attack %>
+<p><%=@player1%> attacked <%=@player2%></p>
+<% end %>
