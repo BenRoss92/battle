@@ -22,4 +22,9 @@ describe Game do
     game.get_hp(:player_1)
   end
 
+  it 'switches turn after attack' do
+    game.attack
+    expect(game.current_turn).to eq player2_double.name
+  end
+
 end

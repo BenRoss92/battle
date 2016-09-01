@@ -1,8 +1,13 @@
 <h2 align="right"><%=@player1_name%> vs. <%=@player2_name%></h2>
+<h3 align="right"><%=@current_turn%>'s Turn</h3>
+
+<p><%=@player1_name%> <%=@player_1_hp%>/60 HP</p>
+<%= "<progress value='"+@player_1_hp.to_s+"' max='60'></progress>" %>
 
 <p><%=@player2_name%> <%=@player_2_hp%>/60 HP</p>
+<%= "<progress value='"+@player_2_hp.to_s+"' max='60'></progress>" %>
 
 <a href="/attack">Attack</a>
 <% if @attack %>
-<p><%=@player1_name%> attacked <%=@player2_name%></p>
+<p><%=@other_player%> attacked <%=@current_turn%></p>
 <% end %>

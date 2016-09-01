@@ -22,6 +22,8 @@ class Battle < Sinatra::Base
     @attack = session[:attack]
     @player_1_hp = $game.get_hp(:player_1)
     @player_2_hp = $game.get_hp(:player_2)
+    @current_turn = $game.current_turn
+    @other_player = $game.other_player
     erb :play
   end
 
