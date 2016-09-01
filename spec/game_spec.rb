@@ -32,4 +32,8 @@ describe Game do
     expect(game.game_over).to be true
   end
 
+  it 'can return the instance of self' do
+    expect(described_class.new_game(player1_double,player2_double)).to be_an_instance_of(described_class)
+  end
+
 end

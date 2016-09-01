@@ -8,6 +8,14 @@ class Game
     @current_turn = player1.name
   end
 
+  def self.new_game(player1, player2)
+    @current_game = Game.new(player1, player2)
+  end
+
+  def self.current_game
+    @current_game
+  end
+
   def other_player
     find_player.name
   end

@@ -5,6 +5,10 @@ require_relative 'lib/game.rb'
 class Battle < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.current_game
+  end
+
   get '/' do
     erb(:index)
   end
@@ -12,25 +16,22 @@ class Battle < Sinatra::Base
   post '/names' do
     player1 = Player.new(params[:player_1_name])
     player2 = Player.new(params[:player_2_name])
-    $game = Game.new(player1, player2)
+    Game.new_game(player1, player2)
     redirect to('/play')
   end
 
   get '/play' do
-    @player1_name = $game.get_name(:player_1)
-    @player2_name = $game.get_name(:player_2)
     @attack = session[:attack]
-    @player_1_hp = $game.get_hp(:player_1)
-    @player_2_hp = $game.get_hp(:player_2)
-    @current_turn = $game.current_turn
-    @other_player = $game.other_player
+    @player1 = {name: @game.get_name(:player_1), hp: @game.get_hp(:player_1)}
+    @player2 = {name: @game.get_name(:player_2), hp: @game.get_hp(:player_2)}
+    @current_turn, @other_player = @game.current_turn, @game.other_player
     erb :play
   end
 
   get '/attack' do
     session[:attack] = true
-    $game.attack
-    if $game.game_over
+    @game.attack
+    if @game.game_over
       redirect to('/game_over')
     else
       redirect to('/play')
@@ -38,8 +39,8 @@ class Battle < Sinatra::Base
   end
 
   get '/game_over' do
-    @other_player = $game.current_turn
-    @current_turn = $game.other_player
+    @other_player = @game.current_turn
+    @current_turn = @game.other_player
     erb(:game_over)
   end
 
