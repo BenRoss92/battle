@@ -7,7 +7,7 @@ def initialize(name)
   @hp = 60
 end
 
-def attack
+def receive_damage
   @hp -= 10
 end
 
