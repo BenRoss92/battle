@@ -33,6 +33,10 @@ class Game
     end
   end
 
+  def game_over
+    player1.hp == 0 || player2.hp == 0
+  end
+
   private
 
   attr_reader :player1, :player2

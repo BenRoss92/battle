@@ -30,7 +30,17 @@ class Battle < Sinatra::Base
   get '/attack' do
     session[:attack] = true
     $game.attack
-    redirect to('/play')
+    if $game.game_over
+      redirect to('/game_over')
+    else
+      redirect to('/play')
+    end
+  end
+
+  get '/game_over' do
+    @other_player = $game.current_turn
+    @current_turn = $game.other_player
+    erb(:game_over)
   end
 
   # start the server if ruby file executed directly

@@ -27,4 +27,9 @@ describe Game do
     expect(game.current_turn).to eq player2_double.name
   end
 
+  it 'player loses game if hp is 0' do
+    allow(player1_double).to receive(:hp).and_return(0)
+    expect(game.game_over).to be true
+  end
+
 end
