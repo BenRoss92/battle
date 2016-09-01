@@ -1,0 +1,98 @@
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  font-size: 30pt;
+}
+
+.verses {
+  text-align: right;
+  font-size: 50pt;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.player1 {
+  text-align: left;
+}
+
+.player2 {
+  text-align: right;
+}
+
+.attack {
+  text-align: center;
+}
+
+.gamelog {
+  border: 3px black solid;
+}
+
+.icon {
+  height: 322px;
+  width: 322px
+}
+
+.frontpage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 512px;
+  height: 320px;
+}
+
+.entry {
+  text-align: center;
+  font-size: 50pt;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.turn {
+  font-size: 40pt;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.leo {
+  text-align: center;
+}
+
+.winner {
+  font-size: 50pt;
+  text-align: center;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.battle {
+  font-size: 50pt;
+}
+
+.signin {
+  font-size: 30pt;
+}
+
+.name1 {
+  text-align: center;
+  font-size: 26pt;
+  width: 390px;
+  height: 90px;
+  border: 1px solid #999999;
+  padding: 5px;
+}
+
+.name2 {
+  text-align: center;
+  font-size: 26pt;
+  width: 390px;
+  height: 90px;
+  border: 1px solid #999999;
+  padding: 5px;
+}

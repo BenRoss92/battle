@@ -1,13 +1,29 @@
-<h2 align="right"><%=@player1[:name]%> vs. <%=@player2[:name]%></h2>
-<h3 align="right"><%=@current_turn%>'s Turn</h3>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css"
+  </head>
+  <body>
+    <div class="verses"><h2><%=@player1[:name]%> vs. <%=@player2[:name]%></h2></div>
+    <div class="turn"><h3><%=@current_turn%>'s Turn</h3></div>
 
-<p><%=@player1[:name]%> <%=@player1[:hp]%>/60 HP</p>
-<%= "<progress value='"+@player1[:hp].to_s+"' max='60'></progress>" %>
+    <div class="player1">
+      <img class="icon" src="http://i2.kym-cdn.com/photos/images/original/000/228/344/PikachuDumbBitch.jpg">
+      <p><%=@player1[:name]%> <%=@player1[:hp]%>/60 HP</p>
+      <%= "<progress value='"+@player1[:hp].to_s+"' max='60'></progress>" %>
+    </div>
 
-<p><%=@player2[:name]%> <%=@player2[:hp]%>/60 HP</p>
-<%= "<progress value='"+@player2[:hp].to_s+"' max='60'></progress>" %>
+    <div class="attack"><a href="/attack"><img class="icon" src="https://s-media-cache-ak0.pinimg.com/236x/e0/53/cc/e053cc1faff1d24a7e3669209b51c8f9.jpg"></a></div>
 
-<a href="/attack">Attack</a>
-<% if @attack %>
-<p><%=@other_player%> attacked <%=@current_turn%></p>
-<% end %>
+    <div class="player2">
+      <img class="icon" src="http://67.media.tumblr.com/b2f34c7911b6cc7849ccb1dc50139eac/tumblr_n83d4fYMfr1tet14uo1_1280.jpg">
+      <p><%=@player2[:name]%> <%=@player2[:hp]%>/60 HP</p>
+      <%= "<progress value='"+@player2[:hp].to_s+"' max='60'></progress>" %>
+    </div>
+
+    <div class="gamelog">
+      <% if @attack %>
+      <p class="entry">Gamelog: <%=@other_player%> attacked <%=@current_turn%></p>
+      <% end %>
+    </div>
+  </body>
+</html>

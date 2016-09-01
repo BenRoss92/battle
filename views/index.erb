@@ -1,13 +1,23 @@
-<h1>Battle!</h1>
-<h2>Sign in to play</h2>
-<form action="/names" method="post">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css"
+  </head>
+  <body>
+<div class="battle"><h1>Battle!</h1></div>
+<img class="frontpage" src="http://cdn.wallpapersafari.com/19/13/usWZYM.jpeg">
+<div class="signin"><h2>Sign in to play</h2></div>
+<div>
+  <form action="/names" method="post">
   <label for="player_1_name">
     Player 1 name
-    <input type="text" name="player_1_name"></input>
+    <input class="name1" type="text" name="player_1_name"></input>
   </label>
   <label for="player_2_name">
     Player 2 name
-    <input type="text" name="player_2_name"></input>
+    <input class="name2" type="text" name="player_2_name"></input>
   </label>
   <input type="submit" value="Play"></input>
-</form>
+  </form>
+</div>
+  </body>
+</html>
