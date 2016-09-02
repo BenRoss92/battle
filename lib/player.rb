@@ -1,5 +1,5 @@
 class Player
-  DEFAULT_POINTS = 200
+  DEFAULT_POINTS = 20
 
   attr_reader :name, :points
 

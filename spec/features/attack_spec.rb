@@ -11,8 +11,8 @@ feature 'Attack' do
     sign_in_and_play
     click_button('Attack')
     click_link('OK')
-    expect(page).to_not have_content "Erce's hitpoint is 200"
-    expect(page).to have_content "Erce's hitpoint is 190"
+    expect(page).to_not have_content "Erce's hitpoint is 20"
+    expect(page).to have_content "Erce's hitpoint is 10"
   end
 
   scenario "players should switch turns" do
