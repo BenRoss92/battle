@@ -15,12 +15,12 @@ feature 'Attack' do
     expect(page).to have_content "Erce's hitpoint is 190"
   end
 
-  # scenario "players should switch turns" do
-  #   sign_in_and_play
-  #   click_button('Attack')
-  #   click_link('OK')
-  #   click_button('Attack')
-  #   expect(page).to have_content 'Erce attacked Peter'
-  #   expect(page).to have_content "Peter's hitpoint is 190"
-  # end
+  scenario "players should switch turns" do
+    sign_in_and_play
+    click_button('Attack')
+    click_link('OK')
+    click_button('Attack')
+    expect(page).to have_content 'Erce attacked Peter'
+    expect(page).to have_content "Now it\'s Peter\'s turn!"
+  end
 end
